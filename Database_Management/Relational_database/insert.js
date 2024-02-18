@@ -11,11 +11,27 @@ var con = mysql.createConnection({
 con.connect(function (err) {
     if (err) throw err;
     console.log("Connected");
-    var sql = "insert into students(id,name,city)values(1,'Test','Test')";
-    con.query(sql, function (err, res) {
+    var sql = "INSERT INTO students (name, city) VALUES ?";
+    var values = [
+        ['John', 'Highway'],
+        ['Peter', 'Lowstreet'],
+        ['Amy', 'Apple'],
+        ['Hannah', 'Mountain'],
+        ['Michael', 'Valley'],
+        ['Sandy', 'Ocean'],
+        ['Betty', 'Green'],
+        ['Richard', 'Sky'],
+        ['Susan', 'One'],
+        ['Vicky', 'Yellow'],
+        ['Ben', 'Park'],
+        ['William', 'Central'],
+        ['Chuck', 'Main'],
+        ['Viola', 'Sideway']
+    ];
+    con.query(sql, [values], function (err, res) {
         if (err) throw err;
         console.log(res);
-        console.log("1 record inserted, ID: " + res.insertId);
+        console.log("Number of records inserted: " + res.affectedRows);
     });
 
 });
