@@ -1,3 +1,6 @@
 [submodule "Blockchain_project/GiftList_week2"]
 	path = Blockchain_project/GiftList_week2
 	url = https://github.com/Nikhil034/Lamprostech_internship_nikhil
+[submodule "ecdsa-node"]
+	path = ecdsa-node
+	url = https://github.com/alchemyplatform/ecdsa-node.git
